@@ -50,13 +50,13 @@ public class LoginController {
     
     @PostMapping("/doLogin")
     public String doLogin(@Valid LoginModel loginModel, BindingResult bindingResult, Model model) {
-    	logger.info("==========> Entering doLogin method in LoginController");
     	// Check for validation errors
     	if (bindingResult.hasErrors()) {
     		model.addAttribute("title", "Login Form");
+            logger.info("Error in doLogin in Login Controller");
     		return "login";
     	}
-    	
+    	logger.info("==========> Entering doLogin method in LoginController");
     	 // Set model attributes
         model.addAttribute("title", "My Orders");
 		model.addAttribute("orders", service.getOrders());
