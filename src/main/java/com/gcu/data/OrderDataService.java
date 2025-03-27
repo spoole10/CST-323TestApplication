@@ -34,13 +34,13 @@ public class OrderDataService implements DataAccessInterface<OrderEntity> {
 	
 	@Override
 	public OrderEntity findById(int id) {
-		logger.trace("==========> In findById method in OrdersDataService");
+		logger.info("==========> In findById method in OrdersDataService");
 		return null;
 	}
 	
 	@Override
 	public List<OrderEntity> findAll() {
-		logger.trace("==========> Entering findAll method in OrdersDataService");
+		logger.info("==========> Entering findAll method in OrdersDataService");
 		List<OrderEntity> orders = new ArrayList<OrderEntity>();
 		try {
 			// Get all the Entity Orders
@@ -55,13 +55,13 @@ public class OrderDataService implements DataAccessInterface<OrderEntity> {
 			e.printStackTrace();
 		}
 		// Return the List
-		logger.trace("==========> Exiting findAll method in OrdersDataService");
+		logger.info("==========> Exiting findAll method in OrdersDataService");
 		return orders;
 	}
 
 	@Override
 	public boolean create(OrderEntity order) {
-		logger.trace("==========> Entering create method in OrdersDataService");
+		logger.info("==========> Entering create method in OrdersDataService");
 		
 		// Example of "overriding" the CrudRepository save() because it simply is never called
 		// You can inject a dataSource and use the jdbcTemplate to provide a customized implementation of a save() method
@@ -79,20 +79,20 @@ public class OrderDataService implements DataAccessInterface<OrderEntity> {
 			e.printStackTrace();
 			return false;
 		}
-		logger.trace("==========> Exiting create method in OrdersDataService");
+		logger.info("==========> Exiting create method in OrdersDataService");
 		return true;
 	}
 
 	@Override
 	public boolean update(OrderEntity t) {
 		// TODO Auto-generated method stub
-		logger.trace("==========> In update method in OrdersDataService");
+		logger.info("==========> In update method in OrdersDataService");
 		return true;
 	}
 
 	@Override
 	public boolean delete(OrderEntity t) {
-		logger.trace("==========> In delete method in OrdersDataService");
+		logger.info("==========> In delete method in OrdersDataService");
 		// TODO Auto-generated method stub
 		return true;
 	}

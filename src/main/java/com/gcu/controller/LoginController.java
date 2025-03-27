@@ -40,17 +40,17 @@ public class LoginController {
 	
     @GetMapping("/")
     public String display(Model model) {
-    	logger.trace("==========> Entering display method in LoginController");
+    	logger.info("==========> Entering display method in LoginController");
     	// Display Login Form View
         model.addAttribute("title", "Login Form");
         model.addAttribute("loginModel", new LoginModel());
-        logger.trace("==========> Exiting display method in LoginController");
+        logger.info("==========> Exiting display method in LoginController");
         return "login";
     }
     
     @PostMapping("/doLogin")
     public String doLogin(@Valid LoginModel loginModel, BindingResult bindingResult, Model model) {
-    	logger.trace("==========> Entering doLogin method in LoginController");
+    	logger.info("==========> Entering doLogin method in LoginController");
     	// Check for validation errors
     	if (bindingResult.hasErrors()) {
     		model.addAttribute("title", "Login Form");
@@ -65,7 +65,7 @@ public class LoginController {
         security.authenticate("username", "password");
 
         // Navigate to the "orders" view
-        logger.trace("==========> Exiting doLogin method in LoginController");
+        logger.info("==========> Exiting doLogin method in LoginController");
         return "orders";
     }
 }

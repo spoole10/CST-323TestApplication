@@ -25,16 +25,16 @@ public class OrdersRestService {
 	
 	@GetMapping(path="/getjson", produces= {MediaType.APPLICATION_JSON_VALUE})
 	public List<OrderModel> getOrdersAsJson() {
-		logger.trace("==========> In getOrdersAsJson() at" + "/getjson");
+		logger.info("==========> In getOrdersAsJson() at" + "/getjson");
 		return service.getOrders();
 	}
 	
 	@GetMapping(path="/getxml", produces={MediaType.APPLICATION_XML_VALUE})
 	public OrderList getOrdersAsXml() {
-		logger.trace("==========> In getOrdersAsXml() at" + "/getxml");
+		logger.info("==========> In getOrdersAsXml() at" + "/getxml");
 		OrderList list = new OrderList();
 		list.setOrders(service.getOrders());
-		logger.trace("==========> Exiting getOrdersAsXml()");
+		logger.info("==========> Exiting getOrdersAsXml()");
 		return list;
 	}
 }

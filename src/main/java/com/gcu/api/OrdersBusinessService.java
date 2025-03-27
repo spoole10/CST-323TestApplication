@@ -19,14 +19,14 @@ public class OrdersBusinessService implements OrdersBusinessServiceInterface {
 	
 	@Override
 	public void test() {
-		logger.trace("==========> Entering test method in OrdersBusinessService");
+		logger.info("==========> Entering test method in OrdersBusinessService");
 		System.out.println("Hello from the OrdersBusinessService");
-		logger.trace("==========> Exiting test method in OrdersBusinessService");
+		logger.info("==========> Exiting test method in OrdersBusinessService");
 	}
 
 	@Override
 	public List<OrderModel> getOrders() {
-		logger.trace("==========> Entering getOrders method in OrdersBusinessService");
+		logger.info("==========> Entering getOrders method in OrdersBusinessService");
 		// Get all the Entity Orders
 		List<OrderEntity> ordersEntity = service.findAll();
 		
@@ -37,22 +37,22 @@ public class OrdersBusinessService implements OrdersBusinessServiceInterface {
 		}
 		
 		// Return list of Domain Orders
-		logger.trace("==========> Exiting test method in OrdersBusinessService");
+		logger.info("==========> Exiting test method in OrdersBusinessService");
 		return ordersDomain;
 	}
 
 	@Override
 	public void init() {
-		logger.trace("==========> Entering init method in OrdersBusinessService");
+		logger.info("==========> Entering init method in OrdersBusinessService");
 		System.out.println("init OrdersBusinessService");
-		logger.trace("==========> Exiting init method in OrdersBusinessService");
+		logger.info("==========> Exiting init method in OrdersBusinessService");
 	}
 
 	@Override
 	public void destroy() {
-		logger.trace("==========> Entering destroy method in OrdersBusinessService");
+		logger.info("==========> Entering destroy method in OrdersBusinessService");
 		System.out.println("destroy OrdersBusinessService");
-		logger.trace("==========> Exiting destroy method in OrdersBusinessService");
+		logger.info("==========> Exiting destroy method in OrdersBusinessService");
 	}
 
 }

@@ -13,14 +13,14 @@ public class AnotherOrdersBusinessService implements OrdersBusinessServiceInterf
 	private static final Logger logger = LoggerFactory.getLogger(AnotherOrdersBusinessService.class);
 	@Override
 	public void test() {
-		logger.trace("==========> Entering test method in AnotherOrdersBusinessService");
+		logger.info("==========> Entering test method in AnotherOrdersBusinessService");
 		System.out.println("Hello from AnotherOrdersBusinessService");
-		logger.trace("==========> Exiting test method in AnotherOrdersBusinessService");
+		logger.info("==========> Exiting test method in AnotherOrdersBusinessService");
 	}
 
 	@Override
 	public List<OrderModel> getOrders() {
-		logger.trace("==========> Entering getOrders method in AnotherOrdersBusinessService");
+		logger.info("==========> Entering getOrders method in AnotherOrdersBusinessService");
 		// Create some Orders
     	List<OrderModel> orders = new ArrayList<OrderModel>();
     	orders.add(new OrderModel(0L, "0000000001", "Product 1", 1.00f, 1));
@@ -28,22 +28,22 @@ public class AnotherOrdersBusinessService implements OrdersBusinessServiceInterf
     	orders.add(new OrderModel(2L, "0000000003", "Product 3", 3.00f, 3));
     	orders.add(new OrderModel(3L, "0000000004", "Product 4", 4.00f, 4));
     	orders.add(new OrderModel(4L, "0000000005", "Product 5", 5.00f, 5));
-    	logger.trace("==========> Exiting getOrders method in AnotherOrdersBusinessService");
+    	logger.info("==========> Exiting getOrders method in AnotherOrdersBusinessService");
 		return orders;
 	}
 
 	@Override
 	public void init() {
-		logger.trace("==========> Entering init method in AnotherOrdersBusinessService");
+		logger.info("==========> Entering init method in AnotherOrdersBusinessService");
 		System.out.println("init AnotherOrdersBusinessService");
-		logger.trace("==========> Exiting init method in AnotherOrdersBusinessService");
+		logger.info("==========> Exiting init method in AnotherOrdersBusinessService");
 	}
 
 	@Override
 	public void destroy() {
-		logger.trace("==========> Entering destroy method in AnotherOrdersBusinessService");
+		logger.info("==========> Entering destroy method in AnotherOrdersBusinessService");
 		System.out.println("destroy AnotherOrdersBusinessService");
-		logger.trace("==========> Exiting destroy method in AnotherOrdersBusinessService");
+		logger.info("==========> Exiting destroy method in AnotherOrdersBusinessService");
 	}
 
 }
