@@ -22,7 +22,7 @@ public class OrderDataService implements DataAccessInterface<OrderEntity> {
 	private OrdersRepository ordersRepository;
 	
 	@SuppressWarnings("unused")
-	// wrong import?
+
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
 
@@ -51,6 +51,7 @@ public class OrderDataService implements DataAccessInterface<OrderEntity> {
 			ordersIterable.forEach(orders::add);
 		}
 		catch (Exception e) {
+			logger.error("Exception in findAll method in OrdersDataService", e);
 			e.printStackTrace();
 		}
 		// Return the List
@@ -74,6 +75,7 @@ public class OrderDataService implements DataAccessInterface<OrderEntity> {
 										 order.getQuantity());
 		}
 		catch (Exception e) {
+			logger.error("Exception in create method in OrdersDataService", e);
 			e.printStackTrace();
 			return false;
 		}
