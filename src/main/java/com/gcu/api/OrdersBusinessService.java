@@ -3,6 +3,8 @@ package com.gcu.api;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.gcu.data.OrderDataService;
@@ -10,17 +12,21 @@ import com.gcu.data.entity.OrderEntity;
 import com.gcu.model.OrderModel;
 
 public class OrdersBusinessService implements OrdersBusinessServiceInterface {
+	private static final Logger logger = LoggerFactory.getLogger(OrdersBusinessService.class);
 
 	@Autowired
 	private OrderDataService service;
 	
 	@Override
 	public void test() {
+		logger.trace("==========> Entering test method in OrdersBusinessService");
 		System.out.println("Hello from the OrdersBusinessService");
+		logger.trace("==========> Exiting test method in OrdersBusinessService");
 	}
 
 	@Override
 	public List<OrderModel> getOrders() {
+		logger.trace("==========> Entering getOrders method in OrdersBusinessService");
 		// Get all the Entity Orders
 		List<OrderEntity> ordersEntity = service.findAll();
 		
@@ -31,17 +37,22 @@ public class OrdersBusinessService implements OrdersBusinessServiceInterface {
 		}
 		
 		// Return list of Domain Orders
+		logger.trace("==========> Exiting test method in OrdersBusinessService");
 		return ordersDomain;
 	}
 
 	@Override
 	public void init() {
+		logger.trace("==========> Entering init method in OrdersBusinessService");
 		System.out.println("init OrdersBusinessService");
+		logger.trace("==========> Exiting init method in OrdersBusinessService");
 	}
 
 	@Override
 	public void destroy() {
+		logger.trace("==========> Entering destroy method in OrdersBusinessService");
 		System.out.println("destroy OrdersBusinessService");
+		logger.trace("==========> Exiting destroy method in OrdersBusinessService");
 	}
 
 }
